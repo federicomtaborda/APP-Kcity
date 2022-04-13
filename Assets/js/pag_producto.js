@@ -5,7 +5,8 @@ $('.select2').select2()
 //Initialize Select2 Elements
 //$('.select3').select3()
 
-const base_url = "http://localhost/APP-TIENDA/"; 
+//const base_url = "https://www.tandiltiendashop.com/APP-VENTAS/"; 
+const base_url = "http://localhost/APP-TIENDA/"
 
 document.addEventListener('DOMContentLoaded', function(){
 

@@ -1,4 +1,6 @@
-const base_url = "http://localhost/APP-TIENDA/"; 
+//const base_url = "https://www.tandiltiendashop.com/APP-VENTAS/"; 
+
+const base_url = "http://localhost/APP-TIENDA/"
 
 /************************* LISTADO DE PROVEEDORES ******************************/
 let tableProveedores;
@@ -49,7 +51,7 @@ formProveedor.onsubmit = function(e) {
    let request = (window.XMLHttpRequest) ? 
                         new XMLHttpRequest() : 
                         new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/proveedores/setProveedores'; 
+    let ajaxUrl = base_url+'proveedores/setProveedores'; 
     let formData = new FormData(formProveedor);
     request.open("POST",ajaxUrl,true);
     request.send(formData);
@@ -108,7 +110,7 @@ function editProveedor(id_proveedor){
     let request = (window.XMLHttpRequest) ? 
                     new XMLHttpRequest() : 
                     new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/proveedores/getProveedor/'+id_proveedor;
+    let ajaxUrl = base_url+'proveedores/getProveedor/'+id_proveedor;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){

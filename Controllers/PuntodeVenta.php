@@ -11,7 +11,7 @@
 			$data['page_id'] = 2;
 			$data['page_home'] = "Inicio";
 			$data['page_name'] = "Listado de Categorias";
-			//$data['page_functions_js'] = "puntodeventa.js";
+			$data['page_functions_js'] = "puntodeventa.js";
 			$this->views->getView($this,"puntodeventa",$data);
 		}
 

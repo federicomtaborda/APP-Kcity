@@ -68,6 +68,21 @@
 
 			/************************* LISTA UN PRODUCTO ******************************/
 
+			public function getCodigo($codigo_prod){
+				if( !empty($codigo_prod) ){
+					$arrData = $this->model->getProductoCodigo($codigo_prod);
+					if(empty($arrData)){
+						$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+					}else{
+						$arrResponse = array('status' => true, 'data' => $arrData);
+					}
+					echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+				}
+	
+			}
+
+			/************************* LISTA UN PRODUCTO ******************************/
+
 			public function getProducto($idproducto){
 				$idproducto = intval($idproducto);
 				if($idproducto > 0){

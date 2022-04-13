@@ -17,16 +17,13 @@
   <?php $siderbar = "Views/header/siderbar.php";
           require_once ($siderbar); 
   ?>
-
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">   
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
 
-      <div class="row mt-3">
+      <div class="row mt-4">
           <!-- left column -->
           <div class="col-md-12 col-ms-12">
             <!-- general form elements -->
@@ -35,37 +32,65 @@
               <!-- form start -->
               <form>
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
+
+                  <div class="row ml-1">
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="codigo" name="codigo" 
+                        placeholder="ingrese código / producto" autofocus>
                       </div>
                     </div>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
-                </div>
-                <!-- /.card-body -->
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="col-md-6">
+                      <span id="total_suma"></span> - <span id="total_cantidad"></span>
+                    </div>  
+
+                  </div>
+                  <!-- /.row -->
+
+                  <div class="row ml-1">
+                    <div class="col-md-2 mt-1">
+                        <button type="button" class="btn btn-block btn-secondary btn-sm">
+                          <i class="fas fa-list-ol"></i>
+                          Presupuesto
+                        </button>
+                      </div>
+
+                      <div class="col-md-2 mt-1">
+                        <button type="button" class="btn btn-block btn-secondary btn-sm">
+                        <i class="fas fa-users"></i> Clientes
+                        </button>
+                      </div>
+
+                      <div class="col-md-2 mt-1">
+                        <button type="button" class="btn btn-block btn-success btn-sm">
+                          <i class="fas fa-money-bill-alt"></i>
+                          Cerrar Venta
+                        </button>
+                      </div>
+
+                  </div>
+                     
+                  <div class="col-md-12 my-3">
+                        <table class="table table-bordered" id="table_ventas">
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Producto</th>
+                              <th style="width: 60px">Cantidad</th>
+                              <th style="width: 60px">Sub_total</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table> 
+                  </div>
+                  
                 </div>
-              </form>
+                <!-- /.row -->
+                    
+                </div>
+                </form>
             </div>
             <!-- /.card -->
         </div>

@@ -4,6 +4,7 @@
 	{
 		
 		private $idproducto;
+		private $codigo;
 		private $precio;
 		private $stock;
 		private $stock_minimo;
@@ -72,6 +73,34 @@
 			INNER JOIN db_productos ON db_productos.id_categoria = db_categorias.id_categoria
 			INNER JOIN db_proveedores ON db_productos.id_proveedor = db_proveedores.id_proveedor
 			WHERE db_productos.id = $this->id_Producto";
+			$request = $this->select($sql);
+			return $request;
+
+		}
+
+		/************************* BUSCAR UN PRODUCTO ******************************/
+
+		public function getProductoCodigo(string $codigo){
+			$this->codigo = $codigo;
+			$sql = "SELECT
+			db_productos.id,
+			db_productos.imagen,
+			db_productos.codigo,
+			db_productos.producto,
+			db_productos.descripcion,
+			db_productos.costo,
+			db_productos.precio,
+			db_productos.stock,
+			db_productos.stock_min,
+			db_productos.id_categoria,
+			db_productos.id_proveedor,
+			db_productos.estado,
+			db_productos.fecha_actualizacion,
+			db_productos.fecha_creacion
+			FROM
+			db_productos
+			WHERE
+			db_productos.codigo = $this->codigo";
 			$request = $this->select($sql);
 			return $request;
 

@@ -15,7 +15,7 @@
     <form id="formProveedor" name="formProveedor">
 
       <div class="row">
-          <input type="text" class="form-control" id="id_proveedor" name="id_proveedor">
+          <input type="hidden" class="form-control" id="id_proveedor" name="id_proveedor">
           <div class="col-sm-12">          
             <div class="form-group">
                 <label>Nombre del Proveedor</label>

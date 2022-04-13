@@ -81,6 +81,23 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-users"></i>
+              <p>
+                Clientes
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo base_url()?>proveedores" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado de Clientes</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li class="nav-header">GRAFICAS</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
