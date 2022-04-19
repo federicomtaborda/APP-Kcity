@@ -1,4 +1,10 @@
-<?php headerAdmin($data); ?>
+<?php 
+
+headerAdmin($data); 
+
+getModal('modal_cerrarventa',$data);
+
+?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -32,7 +38,6 @@
               <!-- form start -->
               <form>
                 <div class="card-body">
-
                   <div class="row ml-1">
 
                     <div class="col-md-4">
@@ -42,8 +47,8 @@
                       </div>
                     </div>
 
-                    <div class="col-md-6">
-                      <span id="total_suma"></span> - <span id="total_cantidad"></span>
+                    <div class="col-md-7 text-right mr-1">
+                      <h3 id="total_suma" class="text-danger">$0.00</h3> <span id="total_cantidad"></span>
                     </div>  
 
                   </div>
@@ -64,9 +69,16 @@
                       </div>
 
                       <div class="col-md-2 mt-1">
-                        <button type="button" class="btn btn-block btn-success btn-sm">
+                        <button type="button" class="btn btn-block btn-outline-success btn-sm" onclick ="cerrar_venta()">
                           <i class="fas fa-money-bill-alt"></i>
                           Cerrar Venta
+                        </button>
+                      </div>
+
+                      <div class="col-md-2 mt-1">
+                        <button type="button" class="btn btn-block btn-outline-danger btn-sm" id="borrar_venta" onclick ="borar_carga()">
+                          <i class="fas fa-trash-alt"></i>
+                          Borrar Venta
                         </button>
                       </div>
 
@@ -78,8 +90,9 @@
                             <tr>
                               <th style="width: 10px">#</th>
                               <th>Producto</th>
-                              <th style="width: 60px">Cantidad</th>
-                              <th style="width: 60px">Sub_total</th>
+                              <th style="width: 100px">Cantidad</th>
+                              <th style="width: 62px">Precio</th>
+                              <th style="width: 62px">Sub_total</th>
                             </tr>
                           </thead>
                           <tbody></tbody>
