@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 type: 'GET',
                 success: (data)=> {
                     let objData = JSON.parse(data);
+                    console.log();
                     if(objData.status){
                         $('tbody').append(
                             '<tr>'+
@@ -25,14 +26,16 @@ document.addEventListener('DOMContentLoaded', function(){
                                         'onclick = "deleteRow(this)">'+
                                         '<i class="fas fa-trash-alt"></i>'+
                                     '</button>'+
+                                '</td>'+                                
+                                '<td style="font-size: 14px">'+
+                                    '<small>' +objData.data.codigo+ '</small><br>' +objData.data.producto+
                                 '</td>'+
-                                '<td style="font-size: 15px">'+objData.data.producto+'</td>'+
                                 '<td>'+
                                   '<input type="number" class="form-control" id="cantidad" name="cantidad"'+
-                                  'value="1" min="1" max="1000" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" onchange ="cambio_cantidad()">'+
+                                  'value="1" min="1" max="1000" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" onchange ="cambio_cantidad()" style="font-size: 14px">'+
                                 '</td>'+
-                                '<td>'+objData.data.precio+'</td>'+
-                                '<td id="sub_total" name="sub_total"></td>'+
+                                '<td style="font-size: 14px">'+objData.data.precio+'</td>'+
+                                '<td id="sub_total" name="sub_total" style="font-size: 14px"></td>'+
                             '</tr>'
                             
                         )
@@ -70,10 +73,6 @@ document.addEventListener('DOMContentLoaded', function(){
 var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
-  
-    // These options are needed to round to whole numbers if that's what you want.
-    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
-    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   });
 
 
@@ -131,6 +130,35 @@ function cerrar_venta(){
     console.log("click");
     $('#modal_cerrarventa').modal('show');
 }
+
+
+/** MUESTRA LOS DATOS DEL CLIENTE AL MOMNETO DEL CIERRE DE LA VENTA**/
+$('#cliente').change(function(){
+    let valor = $(this).val();
+    let div = $('.cliente');
+    if (valor != 1 ){
+        div.show("slow");
+    }else{
+        div.hide("slow");
+    }
+});
+
+/** MUESTRA FORMA DE PAGO**/
+$('#pago').change(function(){
+    let f_pado = $(this).val();
+    let div = $('.tipo_pago');
+    if (f_pado != 1 ){
+        div.show("slow");
+    }else{
+        div.hide("slow");
+    }
+});
+
+
+
+  $('.cliente').hide();
+  $('.tipo_pago').hide();
+
 
 
 

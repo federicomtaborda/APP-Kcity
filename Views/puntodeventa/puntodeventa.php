@@ -88,11 +88,11 @@ getModal('modal_cerrarventa',$data);
                         <table class="table table-bordered" id="table_ventas">
                           <thead>
                             <tr>
-                              <th style="width: 10px">#</th>
-                              <th>Producto</th>
+                              <th style="width: 30px"></th>
+                              <th style="width:auto">Producto</th>
                               <th style="width: 100px">Cantidad</th>
-                              <th style="width: 62px">Precio</th>
-                              <th style="width: 62px">Sub_total</th>
+                              <th style="width: 60px">Precio</th>
+                              <th style="width: 60px">Sub_total</th>
                             </tr>
                           </thead>
                           <tbody></tbody>
